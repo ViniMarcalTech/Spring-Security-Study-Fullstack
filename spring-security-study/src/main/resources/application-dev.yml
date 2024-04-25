@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/spring_security_study
-    username: security_test
-    password: goodpassword
+    url: jdbc:postgresql://localhost:5442/spring_security_study
+    username: username
+    password: password
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -30,3 +30,16 @@ spring:
         connectiontimeout: 5000
         timeout: 3000
         writetimeout: 5000
+
+
+application:
+  security:
+    jwt:
+      secret-key: 7F9254811AC23481BBE1DDA3DF1C4
+      expiration: 86400000
+  mailing:
+    frontend:
+      activation-url: http//localhost:4200/activate-account
+
+server:
+  port: 8088
