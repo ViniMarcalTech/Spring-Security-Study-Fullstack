@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: false
     properties:
       hibernate:
@@ -35,7 +35,7 @@ spring:
 application:
   security:
     jwt:
-      secret-key: 7F9254811AC23481BBE1DDA3DF1C4
+      secret-key: wiK2kfbQGVgm1eTJwQciyc8mZPur7TJvYZ1DjPamj5Rh1LSOIxcDihAcB+KPDWv+
       expiration: 86400000
   mailing:
     frontend:

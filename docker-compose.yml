@@ -16,6 +16,20 @@ services:
       - spring-demo
     restart: unless-stopped
 
+  pgadmin:
+    container_name: pgadmin-dev
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+    ports:
+      - 9632:80
+    depends_on:
+      - postgres
+    networks:
+      - spring-demo
+
   mail-dev:
     container_name: mail-dev-sss
     image: maildev/maildev
