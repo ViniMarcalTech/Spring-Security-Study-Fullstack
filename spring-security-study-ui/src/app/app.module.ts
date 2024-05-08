@@ -14,8 +14,8 @@ import { HttpTokenInterceptor } from './services/interceptor/http-token.intercep
 
 @NgModule({
   declarations: [
-    AppComponent,
     LoginComponent,
+    AppComponent,
     RegisterComponent,
     ActivateAccountComponent,
     HelloWorldComponent,
