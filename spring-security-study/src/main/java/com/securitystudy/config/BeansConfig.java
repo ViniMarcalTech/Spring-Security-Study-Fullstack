@@ -1,5 +1,9 @@
 package com.securitystudy.config;
 
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +27,7 @@ import static org.springframework.http.HttpHeaders.*;
 @RequiredArgsConstructor
 public class BeansConfig {
 
-
+// Security beans -- start
     private final UserDetailsService userDetailsService;
 
     @Bean
@@ -67,4 +71,22 @@ public class BeansConfig {
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }
+// Security beans -- end
+
+
+// OpenApi Documentation Bean -- Start
+
+@Bean
+public OpenAPI customOpenApi(){
+    return new OpenAPI()
+            .components(new Components())
+            .info(new Info().title("RestFul API Spring Security model with JWT.")
+                    .description("This is a rest api documentation"));
+}
+
+
+
+
+
+
 }
